@@ -1,0 +1,7 @@
+.navbar{
+    position: absolute !important;
+    z-index: 200;
+    width: 100%;
+    background-color: #ffffff !important;
+    /* box-shadow: 1px 1px 1px 1px #c5c5c5; */
+}

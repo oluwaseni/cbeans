@@ -1,0 +1,51 @@
+
+   
+<div class="cover">
+  
+   <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+<ion-card *ngFor="let quest of details.questions | paginate: { itemsPerPage: 1, currentPage: p } let i = index" class="que">
+  <span color="warning"> {{i+1}} </span>
+  <div class="ques">{{quest.question}}
+  </div>
+  <div>
+    <ion-spinner *ngIf="spin" name="circles"></ion-spinner>
+    <ion-list *ngFor="let  opt of quest.options">
+      <ion-radio-group value="{{quest.question}}">
+        <!-- <ion-list-header>
+          <ion-label>{{quest.question}}</ion-label>
+        </ion-list-header> -->
+    
+        <ion-item [id]="'A' + i">
+          <ion-label>{{opt.option1}}</ion-label>
+          <ion-radio (click)="answer(quest.answer,'A', 'A'+i, i)" slot="start" value="{{opt.option1}}"></ion-radio>
+        </ion-item>
+    
+        <ion-item [id]="'B'+i">
+          <ion-label>{{opt.option2}}</ion-label>
+          <ion-radio (click)="answer(quest.answer,'B', 'B'+i, i)" slot="start" value="{{opt.option2}}"></ion-radio>
+        </ion-item>
+    
+        <ion-item [id]="'C'+i">
+          <ion-label>{{opt.option3}}</ion-label>
+          <ion-radio (click)="answer(quest.answer,'C', 'C'+i, i)" slot="start" value="{{opt.option3}}"></ion-radio>
+        </ion-item>
+
+        <ion-item [id]="'D'+i">
+          <ion-label>{{opt.option4}}</ion-label>
+          <ion-radio (click)="answer(quest.answer,'D', 'D'+i, i)" slot="start" value="{{opt.option4}}"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+   
+  </div>
+
+</ion-card>
+
+</div>
+
+<pagination-controls *ngIf="!lastQuestion && clicked" class="next" (click)="attempt()" (pageChange)="p = $event" maxSize= 0 previousLabel="" nextLabel="Next Question"></pagination-controls>
+
+<button class="last" (click)="result()" *ngIf="lastQuestion && clicked"> Submit </button>
+<div class="counter"><span id="countdowntimer">{{counter}} </span></div>
+
+

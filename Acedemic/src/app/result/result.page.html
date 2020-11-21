@@ -1,0 +1,30 @@
+
+<ion-content>
+  <div class="cover">
+  
+
+  
+
+  <ion-card id="result">
+    <ion-card-content>
+      <div>
+        <div class="inner">
+          {{user?.lastExam * 100/ 50}}%
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="done">
+    <h3>You have done well.</h3>
+    <p>You are improving, you can do better</p>
+  </div>
+
+  <div id="buton-done">
+    <ion-button expand="block" (click)="done()" color="primary">Done</ion-button>
+  </div>
+  
+  
+</div>
+  
+</ion-content>

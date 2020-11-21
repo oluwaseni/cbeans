@@ -1,0 +1,89 @@
+<ion-content ion-padding style="padding: 5% !important;">
+
+
+
+  <div class="cover">
+
+    <div class="logo">
+      <img style="border-radius: 50%;" src="/assets/Logos/icon.png" width="100px" alt="">
+      <div class="log">
+        <!-- <fa-icon [icon]="['fas', 'street-view']"  slot="end"></fa-icon> -->
+        Aca<span style="color: #ff9029 !important;">demia</span>
+      </div>
+
+    </div>
+
+    <div class="top">
+      <span class="bolde">
+        Hello!
+      </span>
+      <p class="graph">
+        Please enter your details to sign in
+      </p>
+      <div class="incorrect">
+        <span *ngIf="incorrect || incorrects" class="wrong"> Something went Wrong!!! </span>
+         <p *ngIf="incorrects" class="grap">
+           Please check your internet connection !
+         </p>
+         <p *ngIf="incorrect" class="grap">
+           Wrong login details !
+         </p>
+       </div>
+    </div>
+
+    <form [formGroup]="formModel" (ngSubmit)="signUp()" >
+
+      <ion-list style="margin-top: 5% !important;">
+       
+        <ion-item>
+
+          <ion-label position="floating"> Email </ion-label>
+          <ion-input class="form-control" formControlName="email" type="email"
+            style="padding-left: 10px !important;" value=""></ion-input>
+
+
+        </ion-item>
+        <ion-label style="color:  #ff9029; font-size: 70%;  margin-top: 5%;" class="text-danger" *ngIf="formModel.get('email').touched &&
+        formModel.get('email').errors?.required">
+         This field is required
+       </ion-label>
+        <ion-item>
+          <ion-label position="floating"> Pin</ion-label>
+
+          <ion-input class="form-control" formControlName="pin" [type]="passwordType"
+            style="padding-left: 10px !important;"></ion-input>
+          <ion-icon [name]="passwordShown === true ? 'eye' : 'eye-off' " color="gray" slot="end"
+            (click)="togglePassword()"></ion-icon>
+
+           
+        </ion-item>
+        <ion-label style="color:  #ff9029; font-size: 70%;" class="text-danger" 
+        *ngIf="formModel.get('pin').touched && formModel.get('pin').errors?.required">
+            This field is required
+          </ion-label>
+        <ion-label style="color:  #ff9029; font-size: 70%;" class="text-danger" 
+        *ngIf="incorrect">
+            Email or Password Incorrect
+          </ion-label>
+        <div style="font-size: 70% !important; margin-top: 2% !important; margin: 4%; float: right; margin-right: 5%; color:  #ff9029;">
+          Forgot your pin?
+        </div>
+        <div>
+          <ion-button type="button"  [disabled]= "!formModel.valid" expand="block" class="sub" (click)="logins()">Sign In
+            <ion-spinner style="font-size: 60% !important;" *ngIf="spinner" color="tertiary" name="bubbles"></ion-spinner> 
+          </ion-button>
+        </div>
+        <div style="text-align: center !important; margin-top: 15% !important;">
+          Don’t have an account? <span (click)="signUp()" style="color:  #ff9029;">Sign Up</span>
+        </div>
+      </ion-list>
+
+
+    </form>
+  </div>
+  <ion-footer style="margin-bottom: 0 !important; padding-bottom: 1% !important; bottom: 0% !important;">
+    <div style="text-align: center; bottom: 0 !important; margin-bottom: 0% !important; padding-bottom: 0% !important; padding-top: 10% !important; font-family: Poppins;">
+      copyright © AvaStan
+    </div>
+  </ion-footer>
+</ion-content>

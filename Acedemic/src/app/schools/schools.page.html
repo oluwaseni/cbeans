@@ -1,0 +1,58 @@
+<ion-toolbar color="primary" style="padding: 3% 0% 3% 1%;">
+  <ion-buttons slot="start">
+    <ion-back-button color="warning" defaultHref="home/tabs/tab1"></ion-back-button>
+  </ion-buttons>
+  </ion-toolbar>
+<ion-content>
+
+  <ion-card  color="tertiary">
+    <!-- <ion-toolbar color="primary" style="padding: 3% 0% 3% 1%;">
+      <ion-buttons slot="start">
+        <ion-back-button color="warning" defaultHref="home"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>  -->
+  <!-- //select year -->
+  <ion-list hidden>
+    <div  color="tertiary">
+    <ion-item lines="none" color="tertiary">
+      <ion-label color="warning">Subject</ion-label>
+      <ion-select  style="color: #031f3a;" placeholder="Select Subject">
+        <ion-select-option color="primary" *ngFor="let subject of detail" value={{subject.subject}}>{{subject.subject}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+    <ion-item lines="none" color="tertiary">
+      <ion-label color="warning">Year</ion-label>
+      <ion-select style="color: #031f3a;" placeholder="Select Year" okText="Okay" cancelText="Dismiss">
+        <ion-select-option *ngFor="let year of detail" value="{{year.year}}">{{year.year}}</ion-select-option>
+       
+      </ion-select>
+    </ion-item>
+  </div>
+  </ion-list>
+</ion-card>
+<div class="school">
+  <div class="schools">
+
+    <div *ngIf="spin" style="z-index: 100; height: 100px; width: 100%; text-align: center; padding-top: 20% !important;">
+      <ion-spinner color="primary" name="crescent"></ion-spinner>
+    </div>
+    <div *ngIf="notFOund" class="notFound">
+      
+      <span class="big">
+        No Question found... <br>
+      </span>
+      <span class="small">Try another school...</span>
+    </div>
+  <ion-list>
+    <ion-item *ngFor="let question of detail" (click)="getQuestion(question._id)">
+      <ion-label class="text">{{question.subject}}</ion-label>
+      <ion-label>{{question.year}}</ion-label>
+      <ion-icon color="warning" slot="end" name="arrow-forward-circle-outline"></ion-icon>
+      <!-- <ion-toggle slot="end"></ion-toggle> -->
+    </ion-item>
+    
+  </ion-list>
+</div>
+</div>
+</ion-content>

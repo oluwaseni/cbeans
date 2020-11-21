@@ -1,0 +1,67 @@
+.sub{
+    border-radius: 5px !important;
+
+}
+
+
+.cover{
+    padding: 5%;
+    padding-top: 30% !important;
+    
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 80%;
+}
+
+.bolde{
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.graph{
+    // width: 50% !important;
+    color:  #D02764;
+}
+
+.wrong{
+    font-size: 130% !important;
+    color: #5f5a5a;
+    font-weight: bold;
+}
+
+
+.egg-shape{
+    width: 40%;
+    height: 30%;
+    border-radius: 80% 15% 55% 50% / 55% 15% 80% 50%;
+    border: 3px solid linear-gradient(90deg, #E73361 0%, #9A1675 100%);;
+    transform: rotate(95deg);
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    z-index: 20;
+    background: linear-gradient(90deg, #E73361 0%, #9A1675 100%);
+  }
+.egg-shape-purple{
+    width: 40%;
+    height: 30%;
+    border-radius: 80% 25% 55% 50% / 55% 25% 80% 50%;
+    border: 3px solid linear-gradient(90deg, #E73361 0%, #9A1675 100%);;
+    transform: rotate(25deg);
+    position: absolute;
+    top: -2%;
+    right: -13%;
+    background: #380628;
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.0579655);
+  }
+  .logo{
+    align-items: center;
+    text-align: center !important;
+  }
+  
+  .log{
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+  

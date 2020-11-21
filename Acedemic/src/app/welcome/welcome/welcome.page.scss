@@ -1,0 +1,48 @@
+.conte{
+    background-color: #ffffff; 
+    height: 100%;
+    width: 100%;
+    padding-top: 0% !important;
+    padding: 5% !important;
+}
+
+
+.egg-shape{
+    width: 40%;
+    height: 30%;
+    border-radius: 80% 15% 55% 50% / 55% 15% 80% 50%;
+    border: 3px solid linear-gradient(90deg, #E73361 0%, #9A1675 100%);;
+    transform: rotate(95deg);
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    z-index: 20;
+    background: linear-gradient(90deg, #E73361 0%, #9A1675 100%);
+  }
+.egg-shape-purple{
+    width: 40%;
+    height: 30%;
+    border-radius: 80% 25% 55% 50% / 55% 25% 80% 50%;
+    border: 3px solid linear-gradient(90deg, #E73361 0%, #9A1675 100%);;
+    transform: rotate(25deg);
+    position: absolute;
+    top: -2%;
+    right: -13%;
+    background: #380628;
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.0579655);
+  }
+  .log{
+      color: #380628;
+      font-size: 150% !important;
+      padding-left: 20% ;
+      padding-top: 10% ;
+  }
+
+  .logo{
+    //   height: 200px;
+      width: 100%;
+      padding-bottom: 5%;
+    //   padding-top: 5%;
+      margin-bottom: 15%
+  }
+

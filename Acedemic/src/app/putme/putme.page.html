@@ -1,0 +1,45 @@
+
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button color="warning" defaultHref="schools"></ion-back-button>
+    </ion-buttons>
+   
+    
+    <div class="post" *ngIf="details">
+      <ion-grid>
+        <ion-row>
+          <ion-grid size="6">
+            Subject:{{details.subject}}
+          </ion-grid>
+          <!-- <ion-grid>
+            Year: {{details.year}}
+          </ion-grid> -->
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-toolbar>
+
+<ion-content *ngIf="details">
+  <div class="info" *ngIf="!user?.fullMember">
+    You do not have full access yet. Click
+  <button class="pay-button"
+  style="background-color: #079607 !important; padding: 5px !important; font-size: 120%; border-radius: 5px;"
+      angular4-paystack
+      [key]="'pk_test_1d9176b067320ae51978e691d891796935939e6a'"
+      [email]="'avastan.group@gmail.com'"
+      [amount]="5000000"
+      [ref]="reference"
+      [class]="'btn btn-primary'"
+      (paymentInit)="paymentInit()"
+      (close)="paymentCancel()"
+      (callback)="paymentDone($event)"
+    >
+      Activate
+    </button>
+    to pay for full access
+  </div>
+   <app-sheets [details]='details'></app-sheets>
+
+   
+</ion-content>
+ 
